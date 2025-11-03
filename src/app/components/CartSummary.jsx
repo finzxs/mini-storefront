@@ -16,7 +16,7 @@ export default function CartSummary({
     .filter(Boolean);
 
   return (
-    <div className="rounded-xl border bg-white p-4 shadow-sm">
+    <div className="glass rounded-2xl p-4 soft-shadow">
       <h2 className="font-semibold mb-3">Cart</h2>
 
       {items.length === 0 ? (
@@ -31,7 +31,8 @@ export default function CartSummary({
               </div>
               <button
                 onClick={() => onDecrement(it.id)}
-                className="rounded-md border px-2 py-1 hover:bg-gray-50"
+                className="btn rounded-md border px-2 py-1 hover:bg-gray-50"
+                aria-label={`decrement ${it.name}`}
               >
                 −
               </button>
@@ -42,15 +43,16 @@ export default function CartSummary({
 
       <div className="mt-4 flex items-center justify-between text-sm">
         <span className="text-gray-600">Items: <strong>{itemCount}</strong></span>
-        <span className="text-gray-900 font-semibold">Total: ${total.toFixed(2)}</span>
+        <span className="font-semibold">${total.toFixed(2)}</span>
       </div>
 
       <button
         onClick={onReset}
-        className="mt-3 w-full rounded-lg border px-3 py-2 text-sm hover:bg-gray-50"
+        className="btn mt-3 w-full rounded-lg border px-3 py-2 text-sm hover:bg-gray-50"
       >
         Reset Cart
       </button>
     </div>
   );
 }
+

@@ -7,7 +7,7 @@ export default function PriceFilter({ min, max, onMinChange, onMaxChange }) {
         <span className="text-sm font-medium">Min $</span>
         <input
           inputMode="numeric"
-          className="mt-1 w-full rounded-lg border px-3 py-2 text-sm"
+          className="mt-1 w-full rounded-xl border px-3 py-2 text-sm focus:outline-none focus:ring-4 focus:ring-gray-200"
           value={min}
           onChange={e => onMinChange(e.target.value.replace(/[^\d]/g, ''))}
           placeholder="0"
@@ -17,7 +17,7 @@ export default function PriceFilter({ min, max, onMinChange, onMaxChange }) {
         <span className="text-sm font-medium">Max $</span>
         <input
           inputMode="numeric"
-          className="mt-1 w-full rounded-lg border px-3 py-2 text-sm"
+          className="mt-1 w-full rounded-xl border px-3 py-2 text-sm focus:outline-none focus:ring-4 focus:ring-gray-200"
           value={max}
           onChange={e => onMaxChange(e.target.value.replace(/[^\d]/g, ''))}
           placeholder="2000"
